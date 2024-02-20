@@ -1,0 +1,47 @@
+.collection-docs-order {
+  button {
+    margin: 0;
+  }
+  display: flex;
+  justify-content: flex-end;
+  padding-bottom: 10px;
+
+}
+
+.collection-docs-order-content {
+  display: flex;
+  flex-direction: column;
+  gap: 25px;  overflow-x: visible;
+
+}
+
+.order-list {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  overflow-y: auto;
+  max-height: 600px;
+  padding-right: 25px;
+}
+
+.order-item {
+  background: var(--theme-elevation-50);
+  padding: var(--toggle-pad-v) var(--toggle-pad-h);
+  display: flex;
+  --toggle-pad-h: 1.4423076923rem;
+   --toggle-pad-v: 0.9615384615rem;
+  gap: 10px;
+  border-radius: 5px;
+}
+
+.order-buttons {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+
+}
+
+.order-buttons button {
+  width: fit-content;
+  margin: 0;
+}

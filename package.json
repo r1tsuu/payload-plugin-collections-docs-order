@@ -1,6 +1,6 @@
 {
   "name": "@r1tsu/payload-plugin-collections-docs-order",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "repository": "git@github.com:r1tsuu/payload-plugin-collections-docs-order.git",
   "description": "Payload plugin collections docs order",
   "main": "dist/index.js",
@@ -13,13 +13,13 @@
     "react"
   ],
   "scripts": {
-    "build": "tsc",
+    "build": "tsc && copyfiles -f ./src/*.scss dist",
     "lint": "eslint src",
     "lint:fix": "eslint --fix --ext .ts,.tsx src",
     "clean": "rimraf dist && rimraf dev/yarn.lock",
     "prepublishOnly": "yarn clean && yarn build && cd dev"
   },
-  "private":false,
+  "private": false,
   "author": "r1tsuu",
   "license": "MIT",
   "peerDependencies": {
@@ -33,6 +33,7 @@
     "@types/webpack": "^5.28.5",
     "@typescript-eslint/eslint-plugin": "5.12.1",
     "@typescript-eslint/parser": "5.12.1",
+    "copyfiles": "^2.4.1",
     "dotenv": "^8.2.0",
     "eslint": "^8.19.0",
     "eslint-config-airbnb-base": "^14.2.1",

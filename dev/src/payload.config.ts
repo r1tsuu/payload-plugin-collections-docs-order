@@ -7,6 +7,8 @@ import { webpackBundler } from '@payloadcms/bundler-webpack'
 import { slateEditor } from '@payloadcms/richtext-slate'
 import { collectionsDocsOrderPlugin } from '../../src/plugin'
 
+import '../../src/styles.scss'
+
 export default buildConfig({
   admin: {
     user: Users.slug,

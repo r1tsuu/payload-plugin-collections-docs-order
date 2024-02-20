@@ -15,7 +15,6 @@ import { TypeWithID } from 'payload/types'
 
 import RadioInput from 'payload/dist/admin/components/forms/field-types/RadioGroup/Input'
 
-import './CollectionDocsOrderPage.scss'
 import 'react-toastify/dist/ReactToastify.css'
 import { Dialog } from '../Dialog'
 
@@ -211,7 +210,7 @@ const CollectionDocsOrderContent = () => {
 export const CollectionDocsOrderButton = () => {
   return (
     <div className="gutter--left gutter--right collection-docs-order">
-      <Dialog trigger={<button>Sort documents</button>}>
+      <Dialog trigger={<button style={{ margin: 0 }}>Sort documents</button>}>
         <CollectionDocsOrderContent />
         <ToastContainer />
       </Dialog>
