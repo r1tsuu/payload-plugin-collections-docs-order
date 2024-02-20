@@ -4,8 +4,6 @@ import Close from 'payload/dist/admin/components/icons/CloseMenu'
 import type { ReactNode } from 'react'
 import React from 'react'
 
-import './Dialog.scss'
-
 type Props = {
   className?: string
   trigger?: ReactNode

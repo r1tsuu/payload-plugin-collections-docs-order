@@ -45,3 +45,33 @@
   width: fit-content;
   margin: 0;
 }
+
+.dialog-overlay {
+  display: flex;
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  justify-content: center;
+  z-index: 30;
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-color: rgba(0, 0, 0, 0.7);
+  padding: 5rem 3rem;
+  min-width: 100%;
+  overflow: auto;
+}
+
+.dialog-content {
+  position: relative;
+  background-color: var(--theme-bg);
+  padding: 2rem;
+  width: 100%;
+  overflow: auto;
+}
+
+.dialog-content .close {
+  position: absolute;
+  right: 2rem;
+}
