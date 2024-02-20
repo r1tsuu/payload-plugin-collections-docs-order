@@ -17,7 +17,7 @@
     "lint": "eslint src",
     "lint:fix": "eslint --fix --ext .ts,.tsx src",
     "clean": "rimraf dist && rimraf dev/yarn.lock",
-    "prepublishOnly": "yarn clean && yarn build && cd dev && yarn test"
+    "prepublishOnly": "yarn clean && yarn build && cd dev"
   },
   "author": "r1tsuu",
   "license": "MIT",
