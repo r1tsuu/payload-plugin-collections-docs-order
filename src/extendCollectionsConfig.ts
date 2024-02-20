@@ -16,6 +16,7 @@ const externdCollectionConfig = (collection: CollectionConfig) => {
         ],
       },
     },
+    defaultSort: collection.defaultSort ?? '-docOrder',
     fields: [
       ...collection.fields,
       {
