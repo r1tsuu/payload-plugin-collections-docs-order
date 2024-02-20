@@ -22,6 +22,7 @@ const externdCollectionConfig = (collection: CollectionConfig) => {
       {
         type: 'number',
         name: 'docOrder',
+        index: true,
         access: {
           read: () => true,
           create: () => false,
