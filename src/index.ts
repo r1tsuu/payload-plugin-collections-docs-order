@@ -1,2 +1,2 @@
-export { collectionsDocsOrderPlugin as samplePlugin } from './plugin'
-export type { PluginOptions as PluginTypes } from './types'
+export { collectionsDocsOrderPlugin } from './plugin'
+export type { PluginOptions } from './types'

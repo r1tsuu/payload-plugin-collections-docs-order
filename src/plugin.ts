@@ -1,11 +1,9 @@
-import type { Config, Plugin } from 'payload/config'
+import type { Plugin } from 'payload/config'
 
 import { onInitExtension } from './onInitExtension'
 import type { PluginOptions } from './types'
 import { extendWebpackConfig } from './webpack'
 import { extendCollectionsConfig } from './extendCollectionsConfig'
-import { Payload } from 'payload'
-import { array } from 'joi'
 import { saveEndpoint } from './saveEndpoint'
 
 export const collectionsDocsOrderPlugin =
