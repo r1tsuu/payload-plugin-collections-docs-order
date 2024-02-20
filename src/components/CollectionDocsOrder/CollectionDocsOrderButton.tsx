@@ -35,7 +35,7 @@ const CollectionDocsOrderContent = () => {
 
   const limit = 25
 
-  const [sortOrder, setSortOrder] = useState<'asc' | 'desc'>('desc')
+  const [sortOrder, setSortOrder] = useState<'asc' | 'desc'>('asc')
 
   const [data, setData] = useState<{
     docs: Doc[]
@@ -55,8 +55,10 @@ const CollectionDocsOrderContent = () => {
     doc => typeof doc.modifiedTo === 'number' && doc.modifiedTo !== doc.docOrder,
   )
 
+  const sort = `sort=${sortOrder === 'desc' ? '-' : ''}docOrder`
+
   const getInitalData = () => {
-    return fetch(`/api/${slug}?sort=${sortOrder === 'desc' ? '-' : ''}docOrder&limit=${limit}`)
+    return fetch(`/api/${slug}?${sort}&limit=${limit}`)
       .then(res => res.json())
       .then(({ docs, hasNextPage, totalDocs }: PaginatedDocs<Doc>) =>
         setData({
@@ -71,7 +73,7 @@ const CollectionDocsOrderContent = () => {
 
   useEffect(() => {
     if (slug) getInitalData()
-  }, [])
+  }, [sortOrder])
 
   const collectionConfig = collections.find(collection => collection.slug === slug)
 
@@ -126,7 +128,7 @@ const CollectionDocsOrderContent = () => {
 
   const loadMore = () => {
     setData(prev => ({ ...prev, isLoading: true }))
-    return fetch(`/api/${slug}?sort=-docOrder&limit=${limit}&page=${data.loadedPages + 1}`)
+    return fetch(`/api/${slug}?${sort}&limit=${limit}&page=${data.loadedPages + 1}`)
       .then(res => res.json())
       .then(({ docs, hasNextPage }: PaginatedDocs<Doc>) =>
         setData(prev => ({
@@ -142,7 +144,6 @@ const CollectionDocsOrderContent = () => {
   const handleSortOrderChange = (order: 'asc' | 'desc') => {
     setSortOrder(order)
     setData(prev => ({ ...prev, isLoading: true }))
-    getInitalData()
   }
 
   return (
@@ -153,12 +154,12 @@ const CollectionDocsOrderContent = () => {
         onChange={value => handleSortOrderChange(value as 'asc' | 'desc')}
         options={[
           {
-            label: 'Descending',
-            value: 'desc',
-          },
-          {
             label: 'Asceding',
             value: 'asc',
+          },
+          {
+            label: 'Descending',
+            value: 'desc',
           },
         ]}
         value={sortOrder}
