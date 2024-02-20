@@ -1,6 +1,6 @@
 {
   "name": "@r1tsu/payload-plugin-collections-docs-order",
-  "version": "0.0.5",
+  "version": "0.0.6",
   "repository": "git@github.com:r1tsuu/payload-plugin-collections-docs-order.git",
   "description": "Payload plugin collections docs order",
   "main": "dist/index.js",
@@ -16,8 +16,7 @@
     "build": "tsc && copyfiles -f ./src/*.scss dist",
     "lint": "eslint src",
     "lint:fix": "eslint --fix --ext .ts,.tsx src",
-    "clean": "rimraf dist && rimraf dev/yarn.lock",
-    "prepublishOnly": "yarn clean && yarn build && cd dev"
+    "clean": "rimraf dist && rimraf dev/yarn.lock"
   },
   "private": false,
   "author": "r1tsuu",
