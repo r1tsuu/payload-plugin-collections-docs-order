@@ -1,6 +1,6 @@
 {
   "name": "@r1tsu/payload-plugin-collections-docs-order",
-  "version": "0.0.7",
+  "version": "0.0.8",
   "repository": "git@github.com:r1tsuu/payload-plugin-collections-docs-order.git",
   "description": "Payload plugin collections docs order",
   "main": "dist/index.js",
