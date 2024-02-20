@@ -1,9 +1,8 @@
 {
-  "name": "@payloadcms/payload-plugin-template",
-  "version": "0.0.0=1",
-  "homepage:": "https://payloadcms.com",
-  "repository": "git@github.com:payloadcms/payload-plugin-template.git",
-  "description": "Blank plugin template for Payload",
+  "name": "@r1tsu/payload-plugin-collections-docs-order",
+  "version": "0.0.1",
+  "repository": "git@github.com:r1tsuu/payload-plugin-collections-docs-order.git",
+  "description": "Payload plugin collections docs order",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
   "keywords": [
@@ -11,18 +10,16 @@
     "cms",
     "plugin",
     "typescript",
-    "react",
-    "template"
+    "react"
   ],
   "scripts": {
     "build": "tsc",
-    "test": "cd dev && yarn test",
     "lint": "eslint src",
     "lint:fix": "eslint --fix --ext .ts,.tsx src",
     "clean": "rimraf dist && rimraf dev/yarn.lock",
     "prepublishOnly": "yarn clean && yarn build && cd dev && yarn test"
   },
-  "author": "dev@payloadcms.com",
+  "author": "r1tsuu",
   "license": "MIT",
   "peerDependencies": {
     "payload": "^2.0.0"

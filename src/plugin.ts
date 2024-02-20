@@ -4,6 +4,9 @@ import { onInitExtension } from './onInitExtension'
 import type { PluginOptions } from './types'
 import { extendWebpackConfig } from './webpack'
 import { extendCollectionsConfig } from './extendCollectionsConfig'
+import { Payload } from 'payload'
+import { array } from 'joi'
+import { saveEndpoint } from './saveEndpoint'
 
 export const collectionsDocsOrderPlugin =
   (pluginOptions: PluginOptions): Plugin =>
@@ -35,12 +38,9 @@ export const collectionsDocsOrderPlugin =
     config.endpoints = [
       ...(config.endpoints || []),
       {
-        path: '/custom-endpoint',
-        method: 'get',
-        root: true,
-        handler: (req, res): void => {
-          res.json({ message: 'Here is a custom endpoint' })
-        },
+        path: '/collection-docs-order/save',
+        method: 'post',
+        handler: saveEndpoint,
       },
       // Add additional endpoints here
     ]

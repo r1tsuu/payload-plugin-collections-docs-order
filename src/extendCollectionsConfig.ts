@@ -39,7 +39,7 @@ const externdCollectionConfig = (collection: CollectionConfig) => {
           } = await payload.find({ collection: collection.slug, sort: '-docOrder' })
           if (lastDocByOrder && typeof lastDocByOrder.docOrder === 'number') {
             data.docOrder = lastDocByOrder.docOrder + 1
-          } else data.docOrder = 0
+          } else data.docOrder = 1
         },
       ],
     },
