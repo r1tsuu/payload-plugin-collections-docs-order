@@ -188,9 +188,8 @@ const CollectionDocsOrderContent = () => {
                   </div>
                   <a href={`${routes.admin}/collections/${slug}/${doc.id}`} target="_blank">
                     {doc.docOrder}
-                    {doc.modifiedTo &&
-                      doc.modifiedTo !== doc.docOrder &&
-                      ` - ${doc.modifiedTo}`}{' '}
+                    {doc.modifiedTo && doc.modifiedTo !== doc.docOrder && ` - ${doc.modifiedTo}`}
+                    {' - '}
                     {doc[useAsTitle] as string}
                   </a>
                 </div>
