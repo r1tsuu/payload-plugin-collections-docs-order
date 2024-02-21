@@ -10,6 +10,7 @@ import DraggableSortable from 'payload/dist/admin/components/elements/DraggableS
 import DraggableSortableItem from 'payload/dist/admin/components/elements/DraggableSortable/DraggableSortableItem'
 import DragHandle from 'payload/dist/admin/components/icons/Drag'
 import { toast, ToastContainer } from 'react-toastify'
+import { useTranslation } from 'react-i18next'
 
 import { TypeWithID } from 'payload/types'
 
@@ -27,7 +28,7 @@ interface Doc extends Record<string, unknown> {
 
 const CollectionDocsOrderContent = () => {
   const { collections, routes } = useConfig()
-
+  const { t } = useTranslation('pluginCollectionsDocsOrder')
   const url = window.location.href
   let result = url.match(/\/collections\/([^?]+)/)
 
@@ -82,22 +83,21 @@ const CollectionDocsOrderContent = () => {
   const useAsTitle = collectionConfig.admin.useAsTitle
 
   const moveRow = (moveFromIndex: number, moveToIndex: number) => {
-    setData(prev => ({
-      ...prev,
-      docs: prev.docs.map((doc, index) => {
-        if (index === moveFromIndex)
-          return {
-            ...prev.docs[moveToIndex],
-            modifiedTo: prev.docs[moveFromIndex].modifiedTo ?? prev.docs[moveFromIndex].docOrder,
+    setData(prev => {
+      const prevDocs = [...prev.docs]
+      const newDocs = [...prev.docs]
+      const [movedItem] = newDocs.splice(moveFromIndex, 1)
+      newDocs.splice(moveToIndex, 0, movedItem)
+      return {
+        ...prev,
+        docs: newDocs.map((doc, index) => {
+          if (prevDocs[index].id !== doc.id) {
+            return { ...doc, modifiedTo: prevDocs[index].modifiedTo ?? prevDocs[index].docOrder }
           }
-        if (index === moveToIndex)
-          return {
-            ...prev.docs[moveFromIndex],
-            modifiedTo: prev.docs[moveToIndex].modifiedTo ?? prev.docs[moveToIndex].docOrder,
-          }
-        return doc
-      }),
-    }))
+          return doc
+        }),
+      }
+    })
   }
 
   const save = async () => {
@@ -122,8 +122,8 @@ const CollectionDocsOrderContent = () => {
     if (success) {
       setData(prev => ({ ...prev, isLoading: true }))
       await getInitalData()
-      toast.success('Successfully modified', { position: 'bottom-center' })
-    } else toast.error('Unknown server error', { position: 'bottom-center' })
+      toast.success(t('success'), { position: 'bottom-center' })
+    } else toast.error(t('error'), { position: 'bottom-center' })
   }
 
   const loadMore = () => {
@@ -154,11 +154,11 @@ const CollectionDocsOrderContent = () => {
         onChange={value => handleSortOrderChange(value as 'asc' | 'desc')}
         options={[
           {
-            label: 'Asceding',
+            label: t('asc'),
             value: 'asc',
           },
           {
-            label: 'Descending',
+            label: t('desc'),
             value: 'desc',
           },
         ]}
@@ -200,18 +200,19 @@ const CollectionDocsOrderContent = () => {
         ))}
       </DraggableSortable>
       <div className="order-buttons">
-        {data.isLoading ? 'Loading' : `Loaded ${data.docs.length}/${data.totalDocs} docs`}
-        {hasSave && <Button onClick={() => save()}>Save</Button>}
-        {data.hasNextPage && <Button onClick={loadMore}>Load more</Button>}
+        {data.isLoading ? 'Loading' : `${t('loaded')} ${data.docs.length}/${data.totalDocs}`}
+        {hasSave && <Button onClick={() => save()}>{t('save')}</Button>}
+        {data.hasNextPage && <Button onClick={loadMore}>{t('loadMore')}</Button>}
       </div>
     </div>
   )
 }
 
 export const CollectionDocsOrderButton = () => {
+  const { t } = useTranslation('pluginCollectionsDocsOrder')
   return (
     <div className="gutter--left gutter--right collection-docs-order">
-      <Dialog trigger={<button style={{ margin: 0 }}>Sort documents</button>}>
+      <Dialog trigger={<button style={{ margin: 0 }}>{t('sortItems')}</button>}>
         <CollectionDocsOrderContent />
         <ToastContainer />
       </Dialog>

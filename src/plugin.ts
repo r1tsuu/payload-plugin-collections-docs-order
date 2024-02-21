@@ -5,6 +5,8 @@ import type { PluginOptions } from './types'
 import { extendWebpackConfig } from './webpack'
 import { extendCollectionsConfig } from './extendCollectionsConfig'
 import { saveEndpoint } from './saveEndpoint'
+import { deepMerge } from 'payload/utilities'
+import { translations } from './translations'
 
 export const collectionsDocsOrderPlugin =
   (pluginOptions: PluginOptions): Plugin =>
@@ -42,6 +44,13 @@ export const collectionsDocsOrderPlugin =
       },
       // Add additional endpoints here
     ]
+
+    config.i18n = {
+      ...config.i18n,
+      resources: {
+        ...deepMerge(translations, config.i18n?.resources),
+      },
+    }
 
     config.onInit = async payload => {
       if (incomingConfig.onInit) await incomingConfig.onInit(payload)
