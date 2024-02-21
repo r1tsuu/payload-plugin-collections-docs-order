@@ -149,7 +149,7 @@ const CollectionDocsOrderContent = () => {
   return (
     <div className="collection-docs-order-content">
       <RadioInput
-        label="Sort order"
+        label={t('sortOrder')}
         name="sortOrder"
         onChange={value => handleSortOrderChange(value as 'asc' | 'desc')}
         options={[

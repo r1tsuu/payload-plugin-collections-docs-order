@@ -10,6 +10,7 @@ export const translations = {
       asc: 'Asceding',
       desc: 'Descending',
       loaded: 'Loaded',
+      sortOrder: 'Sort order',
     },
   },
   ua: {
@@ -23,6 +24,7 @@ export const translations = {
       asc: 'Зростання',
       desc: 'Спадання',
       loaded: 'Завантажено',
+      sortOrder: 'Сортування',
     },
   },
 }
