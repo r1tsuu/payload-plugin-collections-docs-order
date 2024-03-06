@@ -1,18 +1,13 @@
 import React, { useEffect, useState } from 'react'
 
-import { useParams, useLocation, useHistory } from 'react-router'
 import { useConfig } from 'payload/dist/admin/components/utilities/Config'
-import DefaultTemplate from 'payload/dist/admin/components/templates/Default'
 import { PaginatedDocs } from 'payload/dist/database/types'
-import { useInView } from 'react-intersection-observer'
 import { Button } from 'payload/components'
 import DraggableSortable from 'payload/dist/admin/components/elements/DraggableSortable'
 import DraggableSortableItem from 'payload/dist/admin/components/elements/DraggableSortable/DraggableSortableItem'
 import DragHandle from 'payload/dist/admin/components/icons/Drag'
 import { toast, ToastContainer } from 'react-toastify'
 import { useTranslation } from 'react-i18next'
-
-import { TypeWithID } from 'payload/types'
 
 import RadioInput from 'payload/dist/admin/components/forms/field-types/RadioGroup/Input'
 

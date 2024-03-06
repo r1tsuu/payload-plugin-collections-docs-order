@@ -1,6 +1,6 @@
 {
   "name": "@r1tsu/payload-plugin-collections-docs-order",
-  "version": "0.0.16",
+  "version": "0.0.17",
   "repository": "git@github.com:r1tsuu/payload-plugin-collections-docs-order.git",
   "description": "Payload plugin collections docs order",
   "main": "dist/index.js",
@@ -47,7 +47,6 @@
   },
   "dependencies": {
     "@radix-ui/react-dialog": "^1.0.5",
-    "clsx": "^2.1.0",
-    "react-intersection-observer": "^9.8.0"
+    "clsx": "^2.1.0"
   }
 }

@@ -5,9 +5,9 @@ import Examples from './collections/Examples'
 import { mongooseAdapter } from '@payloadcms/db-mongodb'
 import { webpackBundler } from '@payloadcms/bundler-webpack'
 import { slateEditor } from '@payloadcms/richtext-slate'
-import { collectionsDocsOrderPlugin } from '../../src/plugin'
+import { collectionsDocsOrderPlugin } from '@r1tsu/payload-plugin-collections-docs-order'
 
-import '../../src/styles.scss'
+import '@r1tsu/payload-plugin-collections-docs-order/dist/styles.scss'
 
 export default buildConfig({
   admin: {
