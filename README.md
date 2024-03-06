@@ -23,3 +23,27 @@ export default buildConfig({
 })
 
 ```
+
+## Querying with applied plugin's sort.
+REST:
+```ts
+fetch("http://localhost:3000/api/examples?sort=docOrder").then((res) => res.json())
+```
+Local API:
+```ts
+payload.find({ collection: "examples", sort: "docOrder" })
+```
+GraphQL:
+```graphql
+query {
+  Examples(sort: "docOrder") {
+    docs {
+      title
+    }
+  }
+
+```
+
+## Script to setup for collections that had documents before installing the plugin (recommend to backup the database before)
+1. Copy this file to your project's folder and update `collections` array with your needs. https://gist.github.com/r1tsuu/047008be9800dfcbe371247d10ee6794
+2. Run the file like that: `yarn ts-node --project ./tsconfig.server.json pluginCollectionsDocsSetup.ts`
