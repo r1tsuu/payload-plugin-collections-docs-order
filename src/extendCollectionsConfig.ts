@@ -3,7 +3,7 @@ import { PluginOptions } from './types'
 import type { Payload } from 'payload'
 import { CollectionDocsOrderButton } from './components/CollectionDocsOrder'
 
-const externdCollectionConfig = (collection: CollectionConfig) => {
+const externdCollectionConfig = (collection: CollectionConfig, defaultSortByDocOrder?: boolean) => {
   return {
     ...collection,
     admin: {
@@ -16,7 +16,9 @@ const externdCollectionConfig = (collection: CollectionConfig) => {
         ],
       },
     },
-    defaultSort: collection.defaultSort ?? 'docOrder',
+    ...(defaultSortByDocOrder && {
+      defaultSort: 'docOrder',
+    }),
     fields: [
       ...collection.fields,
       {
@@ -50,12 +52,12 @@ const externdCollectionConfig = (collection: CollectionConfig) => {
 
 export const extendCollectionsConfig = (
   incomingCollections: CollectionConfig[],
-  { collections }: PluginOptions,
+  { collections, defaultSortByDocOrder }: PluginOptions,
 ) => {
   return incomingCollections.map(collection => {
     const foundInConfig = collections.some(({ slug }) => slug === collection.slug)
     if (!foundInConfig) return collection
 
-    return externdCollectionConfig(collection)
+    return externdCollectionConfig(collection, defaultSortByDocOrder)
   })
 }

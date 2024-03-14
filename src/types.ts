@@ -9,4 +9,5 @@ export interface PluginOptions {
    */
   enabled?: boolean
   collections: PluginCollectionConfig[]
+  defaultSortByDocOrder?: boolean
 }
