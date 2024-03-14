@@ -20,7 +20,7 @@ export default buildConfig({
   // ...
   plugins:  [
   collectionsDocsOrderPlugin({
-    collections: [{ slug: 'pages' }]  // The feature will be enabled only for collections that are in this array.,
+    collections: [{ slug: 'pages' }],  // The feature will be enabled only for collections that are in this array.,
     defaultSortByDocOrder: true, // Optional, if you want to use `docOrder` field for default sort in the selected collections, default - `false`
   }),
 ],
