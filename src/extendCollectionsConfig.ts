@@ -33,6 +33,7 @@ const externdCollectionConfig = (collection: CollectionConfig, defaultSortByDocO
       },
     ],
     hooks: {
+      ...(collection.hooks ?? {}),
       beforeChange: [
         ...(collection.hooks?.beforeChange ?? []),
         async ({ req, operation, data }) => {
