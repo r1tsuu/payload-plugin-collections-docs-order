@@ -1,5 +1,5 @@
 # Payload Plugin Collections Docs Order
-
+This is a version for Payload 2.0, if you are using Payload 3.0-beta, here is [beta branch](https://github.com/r1tsuu/payload-plugin-collections-docs-order/tree/beta)
 ## About
 Adds an option to re-order collection documents with drag n drop (almost like array/blocks items). Then on your front end you can query documents with applied sort by `docOrder` field.
 
