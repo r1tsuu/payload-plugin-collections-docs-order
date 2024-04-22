@@ -1,7 +1,5 @@
 'use client';
 
-import 'react-toastify/dist/ReactToastify.css';
-
 import { Button } from '@payloadcms/ui/elements';
 import { DraggableSortable } from '@payloadcms/ui/elements/DraggableSortable';
 import { DraggableSortableItem } from '@payloadcms/ui/elements/DraggableSortable/DraggableSortableItem';
