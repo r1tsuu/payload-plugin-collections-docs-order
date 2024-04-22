@@ -1,6 +1,6 @@
 {
   "name": "@r1tsu/payload-plugin-collections-docs-order",
-  "private": true,
+  "private": false,
   "version": "1.0.0-beta.1",
   "type": "module",
   "scripts": {
