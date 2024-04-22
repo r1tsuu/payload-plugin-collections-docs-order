@@ -29,6 +29,8 @@ jobs:
 
       - name: Publish 🚀
         shell: bash
-        run: pnpm publish --filter @r1tsu/payload-plugin-collections-docs-order --no-git-checks
+        run: |
+          cd plugin
+          pnpm publish --filter @r1tsu/payload-plugin-collections-docs-order --no-git-checks
         env:
           NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
