@@ -26,7 +26,7 @@ export default buildConfig({
       collections: [{ slug: 'pages' }], // The feature will be enabled only for collections that are in this array.,
       defaultSortByDocOrder: true, // Optional, if you want to use `docOrder` field for default sort in the selected collections, default - `false`,
       access: ({ req, data }) => {
-        // Optional, configure access to `saveChanges` endpoint
+        // Optional, configure access for `saveChanges` endpoint, default: Boolean(req.user)
         return req.user?.collection === 'admins';
       },
     }),
