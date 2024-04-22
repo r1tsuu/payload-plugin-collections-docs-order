@@ -20,16 +20,15 @@ jobs:
       - name: Install Node.js
         uses: actions/setup-node@v3
         with:
-          node-version-file: ".nvmrc"
+          node-version-file: '.nvmrc'
           cache: pnpm
           registry-url: https://registry.npmjs.org
 
       - name: Install dependencies
-        run: cd plugin
         run: pnpm install --frozen-lockfile
 
       - name: Publish 🚀
         shell: bash
-        run: pnpm publish --no-git-checks
+        run: pnpm publish --filter @r1tsu/payload-plugin-collections-docs-order --no-git-checks
         env:
           NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
