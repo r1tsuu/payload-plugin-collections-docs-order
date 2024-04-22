@@ -31,6 +31,6 @@ jobs:
         shell: bash
         run: |
           cd plugin
-          pnpm publish --filter @r1tsu/payload-plugin-collections-docs-order --no-git-checks
+          pnpm publish --no-git-checks
         env:
           NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
