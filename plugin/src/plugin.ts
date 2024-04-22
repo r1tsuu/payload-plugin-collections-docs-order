@@ -1,3 +1,5 @@
+import './styles.scss';
+
 import type { Plugin } from 'payload/config';
 import { deepMerge } from 'payload/utilities';
 
