@@ -19,9 +19,6 @@ In your payload.config.ts:
 /// ....
 import { collectionsDocsOrderPlugin } from '@r1tsu/payload-plugin-collections-docs-order';
 
-// Import styles
-import '@r1tsu/payload-plugin-collections-docs-order/dist/styles.scss';
-
 export default buildConfig({
   // ...
   plugins: [
