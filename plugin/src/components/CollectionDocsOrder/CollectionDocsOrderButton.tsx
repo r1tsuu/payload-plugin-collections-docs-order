@@ -222,7 +222,9 @@ const CollectionDocsOrderContent = () => {
         ))}
       </DraggableSortable>
       <div className='order-buttons'>
-        {data.isLoading ? 'Loading' : `${t('loaded')} ${data.docs.length}/${data.totalDocs}`}
+        {data.isLoading
+          ? 'Loading'
+          : `${t('pluginCollectionsDocsOrder:loaded')} ${data.docs.length}/${data.totalDocs}`}
         {hasSave && <Button onClick={() => save()}>{t('pluginCollectionsDocsOrder:save')}</Button>}
         {data.hasNextPage && (
           <Button onClick={loadMore}>{t('pluginCollectionsDocsOrder:loadMore')}</Button>
