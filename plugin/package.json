@@ -9,7 +9,7 @@
     "preview": "vite preview",
     "clean": "rimraf dist",
     "copyfiles": "copyfiles -u 1 \"src/**/*.{html,css,scss,ttf,woff,woff2,eot,svg,jpg,png,json}\" dist/",
-    "prepublishOnly": "pnpm clean && pnpm turbo build"
+    "prepublishOnly": "pnpm clean && pnpm build"
   },
   "peerDependencies": {
     "@payloadcms/richtext-lexical": "3.0.0-beta.6",
