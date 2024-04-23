@@ -13,7 +13,7 @@ export const translations = {
       success: 'Successfully modified',
     },
   },
-  ua: {
+  uk: {
     pluginCollectionsDocsOrder: {
       asc: 'Зростання',
       desc: 'Спадання',
