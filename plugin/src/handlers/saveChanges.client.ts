@@ -16,5 +16,7 @@ export const saveChanges = async ({
     method: 'post',
   });
 
-  return await response.json();
+  if (!response.ok) return { success: false };
+
+  return response.json();
 };

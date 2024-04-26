@@ -9,6 +9,8 @@
   },
   "devDependencies": {
     "@next/eslint-plugin-next": "^14.1.4",
+    "@swc/cli": "^0.1.62",
+    "@swc/core": "^1.4.16",
     "@typescript-eslint/eslint-plugin": "^6.7.5",
     "@typescript-eslint/parser": "^6.7.5",
     "copyfiles": "^2.4.1",
@@ -21,8 +23,16 @@
     "prettier-plugin-css-order": "^2.0.1",
     "rimraf": "^5.0.5",
     "typescript": "^5.4.2",
-    "@swc/cli": "^0.1.62",
-    "@swc/core": "^1.4.16"
+    "@payloadcms/db-mongodb": "3.0.0-beta.18",
+    "@payloadcms/db-postgres": "3.0.0-beta.18",
+    "@payloadcms/next": "3.0.0-beta.18",
+    "@payloadcms/richtext-lexical": "3.0.0-beta.18",
+    "@payloadcms/richtext-slate": "3.0.0-beta.18",
+    "@payloadcms/ui": "3.0.0-beta.18",
+    "@payloadcms/translations": "3.0.0-beta.18",
+    "payload": "3.0.0-beta.18",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0"
   },
   "keywords": [],
   "author": "",

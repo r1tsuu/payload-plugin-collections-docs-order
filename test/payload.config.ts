@@ -2,12 +2,13 @@ import '@plugin/styles.scss';
 
 import { mongooseAdapter } from '@payloadcms/db-mongodb';
 import { lexicalEditor } from '@payloadcms/richtext-lexical';
-import { collectionsDocsOrderPlugin } from '@plugin/main';
+import { collectionsDocsOrderPlugin } from '@plugin/index';
 import path from 'path';
 import { buildConfig } from 'payload/config';
 import { en } from 'payload/i18n/en';
-import { seed } from 'seed';
 import { fileURLToPath } from 'url';
+
+import { seed } from './seed';
 
 const filename = fileURLToPath(import.meta.url);
 

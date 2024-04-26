@@ -1,7 +1,7 @@
 {
   "name": "@r1tsu/payload-plugin-collections-docs-order",
   "private": false,
-  "version": "1.0.0-beta.5",
+  "version": "1.0.0-beta.6",
   "type": "module",
   "scripts": {
     "dev": "vite",
@@ -13,15 +13,15 @@
     "prepublishOnly": "pnpm clean && pnpm build"
   },
   "peerDependencies": {
-    "@payloadcms/ui": "3.0.0-beta.6",
-    "payload": "3.0.0-beta.6"
+    "@payloadcms/ui": "^3.0.0-beta.18",
+    "payload": "^3.0.0-beta.18"
   },
   "devDependencies": {
-    "@payloadcms/ui": "3.0.0-beta.6",
+    "@payloadcms/ui": "../node_modules/@payloadcms/ui",
     "@types/react": "^18.2.64",
-    "payload": "3.0.0-beta.6",
-    "react": "^18.2.0",
-    "typescript": "^5.2.2"
+    "payload": "../node_modules/payload",
+    "react": "../node_modules/react",
+    "typescript": "^5.4.2"
   },
   "types": "./src/index.ts",
   "main": "./src/index.ts",

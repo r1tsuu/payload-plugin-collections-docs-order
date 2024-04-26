@@ -1,6 +1,6 @@
 'use client';
 
-import { Button } from '@payloadcms/ui/elements';
+import { Button, toast } from '@payloadcms/ui/elements';
 import { DraggableSortable } from '@payloadcms/ui/elements/DraggableSortable';
 import { DraggableSortableItem } from '@payloadcms/ui/elements/DraggableSortable/DraggableSortableItem';
 import { Radio } from '@payloadcms/ui/fields/RadioGroup/Radio';
@@ -128,10 +128,13 @@ const CollectionDocsOrderContent = () => {
     if (success) {
       setData((prev) => ({ ...prev, isLoading: true }));
       await getInitalData();
-      // toast.success(t("pluginCollectionsDocsOrder:success"), {
-      //   position: "bottom-center",
-      // });
+      toast.success(t('pluginCollectionsDocsOrder:success'), {
+        position: 'bottom-center',
+      });
     } else {
+      toast.success(t('pluginCollectionsDocsOrder:error'), {
+        position: 'bottom-center',
+      });
     }
     // toast.error(t("pluginCollectionsDocsOrder:error"), {
     //   position: "bottom-center",

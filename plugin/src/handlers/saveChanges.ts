@@ -17,7 +17,7 @@ export const schema = z.object({
 export const saveChanges =
   ({ access }: { access: NonNullable<PluginOptions['access']> }): PayloadHandler =>
   async (req) => {
-    const result = schema.safeParse(req.data);
+    const result = schema.safeParse(await req.json());
 
     if (!result.success) return Response.json({ errors: result.error.errors }, { status: 400 });
 
