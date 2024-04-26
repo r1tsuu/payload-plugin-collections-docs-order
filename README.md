@@ -12,7 +12,7 @@ https://github.com/r1tsuu/payload-plugin-collections-docs-order/assets/64744993/
 
 ## Install
 
-`pnpm add @r1tsu/payload-plugin-collections-docs-order@1.0.0-beta.4`
+`pnpm add @r1tsu/payload-plugin-collections-docs-order@1.0.0-beta.6`
 In your payload.config.ts:
 
 ```ts
