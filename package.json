@@ -1,52 +1,40 @@
 {
-  "name": "@r1tsu/payload-plugin-collections-docs-order",
-  "version": "0.0.19",
-  "repository": "git@github.com:r1tsuu/payload-plugin-collections-docs-order.git",
-  "description": "Payload plugin collections docs order",
-  "main": "dist/index.js",
-  "types": "dist/index.d.ts",
-  "keywords": [
-    "payload",
-    "cms",
-    "plugin",
-    "typescript",
-    "react"
-  ],
+  "name": "monorepo",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
   "scripts": {
-    "build": "tsc && copyfiles -f ./src/*.scss dist",
-    "lint": "eslint src",
-    "lint:fix": "eslint --fix --ext .ts,.tsx src",
-    "clean": "rimraf dist && rimraf dev/yarn.lock"
-  },
-  "private": false,
-  "author": "r1tsuu",
-  "license": "MIT",
-  "peerDependencies": {
-    "payload": "^2.0.0"
+    "dev": "pnpm --filter test dev",
+    "test": "echo \"Error: no test specified\" && exit 1"
   },
   "devDependencies": {
-    "@payloadcms/eslint-config": "^0.0.1",
-    "@swc/jest": "^0.2.28",
-    "@types/jest": "^29.5.11",
-    "@types/react-router": "^5.1.20",
-    "@types/webpack": "^5.28.5",
-    "@typescript-eslint/eslint-plugin": "5.12.1",
-    "@typescript-eslint/parser": "5.12.1",
+    "@next/eslint-plugin-next": "^14.1.4",
+    "@swc/cli": "^0.1.62",
+    "@swc/core": "^1.4.16",
+    "@typescript-eslint/eslint-plugin": "^6.7.5",
+    "@typescript-eslint/parser": "^6.7.5",
     "copyfiles": "^2.4.1",
-    "dotenv": "^8.2.0",
-    "eslint": "^8.19.0",
-    "eslint-config-airbnb-base": "^14.2.1",
-    "eslint-config-prettier": "^8.5.0",
-    "eslint-plugin-import": "2.25.4",
-    "eslint-plugin-prettier": "^4.0.0",
-    "jest": "^29.7.0",
-    "payload": "2.11.1",
-    "prettier": "^2.7.1",
-    "react": "^18.0.0",
-    "typescript": "^4.8.4"
+    "eslint": "^8.57.0",
+    "eslint-config-next": "14.1.0",
+    "eslint-plugin-import": "^2.28.1",
+    "eslint-plugin-perfectionist": "^2.1.0",
+    "eslint-plugin-simple-import-sort": "^10.0.0",
+    "prettier": "^3.2.5",
+    "prettier-plugin-css-order": "^2.0.1",
+    "rimraf": "^5.0.5",
+    "typescript": "^5.4.2",
+    "@payloadcms/db-mongodb": "3.0.0-beta.18",
+    "@payloadcms/db-postgres": "3.0.0-beta.18",
+    "@payloadcms/next": "3.0.0-beta.18",
+    "@payloadcms/richtext-lexical": "3.0.0-beta.18",
+    "@payloadcms/richtext-slate": "3.0.0-beta.18",
+    "@payloadcms/ui": "3.0.0-beta.18",
+    "@payloadcms/translations": "3.0.0-beta.18",
+    "payload": "3.0.0-beta.18",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0"
   },
-  "dependencies": {
-    "@radix-ui/react-dialog": "^1.0.5",
-    "clsx": "^2.1.0"
-  }
+  "keywords": [],
+  "author": "",
+  "license": "ISC"
 }
