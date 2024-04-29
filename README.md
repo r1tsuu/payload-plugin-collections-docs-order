@@ -1,6 +1,4 @@
-# Payload Plugin Collections Docs Order
-
-Warning: this is a beta version for Payload 3.0-beta
+# Payload Plugin Collections Docs Order for Payload 3.0
 
 ## About
 
