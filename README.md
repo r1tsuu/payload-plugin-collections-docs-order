@@ -1,3 +1,6 @@
+# Note!
+This repository for 3.0 is deprecated and has been moved to https://github.com/r1tsuu/payload-enchants 
+
 # Payload Plugin Collections Docs Order for Payload 3.0
 
 ## About
